@@ -1,6 +1,5 @@
 import React,{useEffect,useState}from 'react';
 import axios from 'axios';
-import 'FinalF3\src\index.css';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

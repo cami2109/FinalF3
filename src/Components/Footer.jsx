@@ -1,5 +1,4 @@
 import React from 'react';
-import 'FinalF3\src\index.css';
 
 const Footer = () => {
   return (

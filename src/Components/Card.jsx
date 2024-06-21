@@ -1,7 +1,6 @@
 import React,{useContext} from "react";
 import { Link} from "react-router-dom";
 import { ContextGlobal } from "./utils/global.context"; 
-import 'FinalF3\src\index.css';
 
 
 const Card = ({ dentist }) => {
@@ -20,6 +19,7 @@ const Card = ({ dentist }) => {
     <div className="card">
       <h2>{dentist.name}</h2>
       <p>{dentist.specialty}</p>
+      <img src={dentist.imageUrl} alt={dentist.name}/>
     
         <button onClick={toggleFavorite}>{isFavorite ? 'removeFavorite':'Add to favorites'}
         </button>

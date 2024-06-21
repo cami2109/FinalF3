@@ -2,7 +2,6 @@ import React,{useContext,useEffect} from 'react'
 import Card from '../Components/Card'
 import { ContextGlobal } from '../Components/utils/global.context'
 import { Link } from 'react-router-dom';
-import 'FinalF3\src\index.css';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

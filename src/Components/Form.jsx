@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import Contact from "../Routes/Contact";
-import 'FinalF3\src\index.css';
 
 
 const Form = ({handleSubmit}) => {
