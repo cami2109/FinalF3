@@ -20,10 +20,11 @@ const Card = ({ dentist }) => {
     <div className="card">
       <h2>{dentist.name}</h2>
       <p>{dentist.specialty}</p>
-      <img src={dentist.image} alt={dentist.name}/>
+      <img src="\public\images\doctor.jpg" alt={dentist.name}/>
     
         <button onClick={toggleFavorite}>{isFavorite ? 'removeFavorite':'Add to favorites'}
         </button>
+        <a href={`/dentist/${dentist.id}`}>  Detalle</a>
        
     </div>
   );
