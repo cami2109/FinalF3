@@ -28,7 +28,7 @@ const AppContent = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/dentist/:id" element={<Detail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/favs" element={<Favs />} />
       </Routes>
