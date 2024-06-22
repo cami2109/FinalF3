@@ -1,5 +1,4 @@
 import React,{useContext} from "react";
-import { Link} from "react-router-dom";
 import { ContextGlobal } from "./utils/global.context"; 
 
 
@@ -15,11 +14,13 @@ const Card = ({ dentist }) => {
       addFavorite(dentist);
     } };
 
+  
+
   return (
     <div className="card">
       <h2>{dentist.name}</h2>
       <p>{dentist.specialty}</p>
-      <img src={dentist.imageUrl} alt={dentist.name}/>
+      <img src={dentist.image} alt={dentist.name}/>
     
         <button onClick={toggleFavorite}>{isFavorite ? 'removeFavorite':'Add to favorites'}
         </button>

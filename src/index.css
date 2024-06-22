@@ -50,7 +50,7 @@ body.light{
   } 
   
   footer {
-    display: fixed;
+    display: flex;
     justify-content: center;
     text-align: center;
     padding: 2rem;
@@ -80,13 +80,13 @@ body.light{
   }
   
   .card{
-    display:flex;
-    justify-content: space-around;
-    flex-direction: grid;
-    align-items: center;
-    width: 200px;
-    padding: 0.5rem 0.5rem 0 0.5rem;
-    border: 0.5px solid rgb(223, 231, 223);
+    display: inline-block;
+    width: 250px;
+    padding: 0,5rem;
+    margin: 10px;
+    border: o,5px solid rgb(223, 231, 223);
+    background-color: white;
+
   }
   
   .card:hover{
@@ -94,9 +94,10 @@ body.light{
   }
   
   .card-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    gap: 20px;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
   }
   
   table {

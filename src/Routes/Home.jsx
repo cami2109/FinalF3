@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Home = ({dentist}) => {
+const Home = () => {
   const {state,setData}= useContext(ContextGlobal);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,15 +25,16 @@ const Home = ({dentist}) => {
   return (
     <div>
       <h1>Lista de dentistas</h1>
-      <ul>
-      { dentist.map(dentist =>(
-        <div 
+      <div>
+      { state.dentist && state.dentist.map (dentist =>(
+        <div
         key={dentist.id}
         className='grid-item'>
-        <Link to={'/dentist/${dentist.id}'}>Ver detalle</Link> 
+          <Card dentist={dentist} />
+        <Link to={`/dentist/${dentist.id}`}>Ver detalle</Link> 
         </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

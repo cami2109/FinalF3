@@ -1,23 +1,31 @@
 import React,{ createContext,useEffect,useReducer} from 'react';
 
+export const GlobalContext= createContext();
 
-
-export const initialState = {theme: 'light', 
-  data: [],favorites: []
+export const initialState = {
+  theme: 'light', 
+  favorites: [],
+  dentist: []
   };
 
-const reducer=(state,action)=>{ 
-  switch(action.type)
-  { case 'TOGGLE_THEME': 
-    return { ...state,theme: state.theme === 'light' ? 'dark':'light'};
-case 'SET_DATA': return { ...state, data:action.payload};
-case 'ADD_FAVORITE': return { ...state, favorites:[...state,favorites,action.payload]};
-case 'REMOVE_FAVORITE': return { 
-  ...state,favorites:state.favorites.filter(item=> item.id !== action.payload.id)};
-default: return state;}
-};
+const ACTIONS = {
+    TOGGLE_THEME: (state) => 
+      ({ ...state, theme: state.theme === 'light' ? 
+        'dark' : 'light' }),
+    SET_DATA: (state,action) => 
+      ({ ...state, dentist: action.payload }),
 
-export const ContextGlobal = createContext(undefined);
+    ADD_FAVORITE: (state,action) => ({ ...state, favorites: [...state.favorites,action.payload]}),
+    REMOVE_FAVORITE: (state,action) => ({
+        ...state, favorites: state.favorites.filter(fav => fav.id !== action.payload.id)
+      })};
+
+      const  reducer=(state,action) =>{
+        const actionHandler= ACTIONS[action.type];
+        return actionHandler ? actionHandler (state,action):state;
+      };
+
+      export const ContextGlobal = createContext(undefined);
 
 export const ContextProvider = ({ children }) => {
   const[state,dispatch]=useReducer(reducer,initialState);
